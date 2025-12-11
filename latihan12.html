@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Furniture - Modern</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #f5f7fa;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .navbar {
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero {
+        background: url('https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1400&q=80')
+          center/cover no-repeat;
+        height: 360px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 20px;
+        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+        margin-top: 20px;
+      }
+
+      .product-card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        transition: 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-card img {
+        height: 230px;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .filter-btn.active {
+        background-color: #0d6efd;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#">Furniture Wolles</a>
+
+        <!-- Toggle (HP Mode) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#productList">Produk</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- HERO -->
+      <div class="hero mt-4">
+        <h1 class="fw-bold display-5">Temukan Furniture Impian Anda</h1>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="row mt-5">
+        <div class="col-md-6 mx-auto">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control form-control-lg shadow-sm"
+            placeholder="Cari produk..."
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <!-- CATEGORY FILTER -->
+      <div class="text-center mt-3">
+        <button
+          class="btn btn-outline-dark mx-1 filter-btn active"
+          data-filter="all"
+        >
+          All
+        </button>
+        <button
+          class="btn btn-outline-dark mx-1 filter-btn"
+          data-filter="kursi"
+        >
+          Kursi
+        </button>
+        <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="meja">
+          Meja
+        </button>
+        <button
+          class="btn btn-outline-dark mx-1 filter-btn"
+          data-filter="lemari"
+        >
+          Lemari
+        </button>
+      </div>
+
+      <div class="row g-4 mt-4" id="productList">
+        <!-- PRODUCT 1 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="kursi"
+          data-name="kursi minimalis modern"
+        >
+          <div class="product-card">
+            <img src="1.jpg" alt="Kursi Minimalis" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Kursi Minimalis</h5>
+              <p class="text-muted">Cocok untuk ruang tamu modern.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="meja"
+          data-name="meja belajar anak"
+        >
+          <div class="product-card">
+            <img src="2.jpg" alt="Meja Belajar" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Meja Belajar</h5>
+              <p class="text-muted">Ukuran pas untuk meja belajar sederhana.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="lemari"
+          data-name="lemari pakaian besar"
+        >
+          <div class="product-card">
+            <img src="3.jpg" alt="Lemari Pakaian" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Lemari Pakaian</h5>
+              <p class="text-muted">Muatan besar untuk kebutuhan keluarga.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 4 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="sofa"
+          data-name="sofa empuk nyaman"
+        >
+          <div class="product-card">
+            <img src="4.jpg" alt="Sofa Empuk" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Sofa Empuk</h5>
+              <p class="text-muted">Sofa 2-seat dengan kenyamanan ekstra.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 5 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="lampu"
+          data-name="lampu hias aesthetic"
+        >
+          <div class="product-card">
+            <img src="5.jpg" alt="Lampu Hias" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Lampu Hias</h5>
+              <p class="text-muted">
+                Lampu aesthetic untuk pencahayaan hangat.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 6 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="rak"
+          data-name="rak buku kayu"
+        >
+          <div class="product-card">
+            <img src="6.jpg" alt="Rak Buku" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Rak Buku</h5>
+              <p class="text-muted">Rak buku kayu kuat & minimalis.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 7 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="meja"
+          data-name="meja tamu elegan"
+        >
+          <div class="product-card">
+            <img src="7.jpg" alt="Meja Tamu" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Meja Tamu</h5>
+              <p class="text-muted">Meja tamu elegan dari kayu premium.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 8 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="sofa"
+          data-name="sofa panjang keluarga"
+        >
+          <div class="product-card">
+            <img src="8.jpg" alt="Sofa Panjang" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Sofa Panjang</h5>
+              <p class="text-muted">Pas untuk ruang keluarga besar.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 9 -->
+        <div
+          class="col-md-4 product-item"
+          data-category="kursi"
+          data-name="kursi santai balkon"
+        >
+          <div class="product-card">
+            <img src="9.jpg" alt="Kursi Santai" class="img-fluid" />
+            <div class="p-3">
+              <h5 class="fw-bold">Kursi Santai</h5>
+              <p class="text-muted">Kursi outdoor nyaman untuk balkon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <div id="contact" class="mt-5 p-5 bg-white shadow-sm">
+      <h2 class="text-center fw-bold mb-3">Kontak Kami</h2>
+      <p class="text-center text-muted">
+        Hubungi kami untuk informasi produk atau pemesanan.
+      </p>
+
+      <div class="row mt-4">
+        <div class="col-md-4 text-center">
+          <h5>📍 Alamat</h5>
+          <p>
+            Jl. Gajah Raya No.40, Sambirejo, Kec. Gayamsari, Kota Semarang, Jawa
+            Tengah 50166
+          </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <h5>📞 Telepon</h5>
+          <p>0812-3456-7890</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <h5>📧 Email</h5>
+          <p>furnitureWolles@gmail.com</p>
+        </div>
+        <!-- GOOGLE MAP -->
+        <div class="container mt-4">
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.216996870431!2d110.44651787345792!3d-6.983698968386743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708d000bf83f3d%3A0xbc3647160d0d8075!2sUPGRIS%20GYM%20CENTER!5e0!3m2!1sid!2sid!4v1765433194262!5m2!1sid!2sid"
+                width="100%"
+                height="350"
+                style="border: 0; border-radius: 10px"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center p-4 mt-5 bg-dark text-light">
+      © 2025 Furniture Wolles - Latihan 12
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+      // state
+      let currentFilter = 'all';
+      let currentKeyword = '';
+
+      // elements
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const products = Array.from(document.querySelectorAll('.product-item'));
+      const searchInput = document.getElementById('searchInput');
+
+      // set up filter buttons
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter');
+          renderProducts();
+        });
+      });
+
+      // search input (debounced lightly)
+      let debounceTimer = null;
+      searchInput.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          currentKeyword = searchInput.value.trim().toLowerCase();
+          renderProducts();
+        }, 150);
+      });
+
+      // render function: applies both filter + search
+      function renderProducts() {
+        products.forEach((product) => {
+          const name = (product.dataset.name || '').toLowerCase();
+          const category = (product.dataset.category || '').toLowerCase();
+
+          const matchesFilter =
+            currentFilter === 'all' || category === currentFilter;
+          const matchesSearch =
+            currentKeyword === '' || name.includes(currentKeyword);
+
+          if (matchesFilter && matchesSearch) {
+            product.classList.remove('d-none');
+          } else {
+            product.classList.add('d-none');
+          }
+        });
+      }
+
+      // initial render (in case)
+      renderProducts();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
